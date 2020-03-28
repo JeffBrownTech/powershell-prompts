@@ -2,6 +2,10 @@
 
 This repository holds examples of how to create prompts inside the PowerShell console window.
 
+To learn more about creating PowerShell prompts, check out my blog post on the subject:
+
+[How to Create Prompts in PowerShell](https://www.jeffbrown.tech/post/how-to-create-prompts-in-powershell)
+
 ## PromptMethod-Manual.ps1
 This script holds an example function using what I call a "manual" method of creating a prompt, meaning more effort is put into creating help text and matching the color scheme of a regular PowerShell prompt.
 
