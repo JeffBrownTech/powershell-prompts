@@ -20,7 +20,7 @@ function Remove-MyItem {
 
     switch ($response) {
         ([System.Windows.Forms.DialogResult]::Yes) { Write-Output "Removing file..."; break }
-        ([System.Windows.Forms.DialogResult]::No) { Write-Output "Leaving file...";  break }
+        ([System.Windows.Forms.DialogResult]::No) { Write-Output "No changes made...";  break }
     }
 }
 
@@ -37,11 +37,13 @@ function New-YesNoPrompt {
         $PromptMessage
     )
 
+    # Create the form title, size, and starting position
     $form = New-Object System.Windows.Forms.Form
     $form.Text = $PromptTitle
     $form.Size = New-Object System.Drawing.Size(300, 200)
     $form.StartPosition = 'CenterScreen'
 
+    # Create the Yes button and its properties
     $yesButton = New-Object System.Windows.Forms.Button
     $yesButton.Location = New-Object System.Drawing.Point(60, 120)
     $yesButton.Size = New-Object System.Drawing.Size(75, 23)
@@ -50,6 +52,7 @@ function New-YesNoPrompt {
     $form.AcceptButton = $yesButton
     $form.Controls.Add($yesButton)
 
+    # Create the No button and its properties
     $noButton = New-Object System.Windows.Forms.Button
     $noButton.Location = New-Object System.Drawing.Point(165, 120)
     $noButton.Size = New-Object System.Drawing.Size(75, 23)
@@ -58,18 +61,16 @@ function New-YesNoPrompt {
     $form.CancelButton = $noButton
     $form.Controls.Add($noButton)
 
+    # Use a label to display the prompt text
     $label = New-Object System.Windows.Forms.Label
     $label.Location = New-Object System.Drawing.Point(10, 20)
     $label.Size = New-Object System.Drawing.Size(280, 60)
     $label.Text = $PromptMessage
     $form.Controls.Add($label)
 
-    # $textBox = New-Object System.Windows.Forms.TextBox
-    # $textBox.Location = New-Object System.Drawing.Point(10,100)
-    # $textBox.Size = New-Object System.Drawing.Size(260,20)
-    # $form.Controls.Add($textBox)
-
+    # Set the form to appear on top of all other windows
     $form.Topmost = $true
 
+    # Return the form object
     return $form
 }
