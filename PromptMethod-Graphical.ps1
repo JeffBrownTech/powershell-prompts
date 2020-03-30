@@ -1,6 +1,3 @@
-Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName System.Drawing
-
 function Remove-MyItem {
     [CmdletBinding()]
     param(
@@ -37,6 +34,10 @@ function New-YesNoPrompt {
         $PromptMessage
     )
 
+    # Add .NET Framework classes
+    Add-Type -AssemblyName System.Windows.Forms
+    Add-Type -AssemblyName System.Drawing
+
     # Create the form title, size, and starting position
     $form = New-Object System.Windows.Forms.Form
     $form.Text = $PromptTitle
@@ -69,7 +70,7 @@ function New-YesNoPrompt {
     $form.Controls.Add($label)
 
     # Set the form to appear on top of all other windows
-    $form.Topmost = $true
+    $form.TopMost = $true
 
     # Return the form object
     return $form
