@@ -1,3 +1,7 @@
+# Add .NET Framework classes
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+
 function Remove-MyItem {
     [CmdletBinding()]
     param(
@@ -32,11 +36,7 @@ function New-YesNoPrompt {
         [Parameter(Mandatory)]
         [string]
         $PromptMessage
-    )
-
-    # Add .NET Framework classes
-    Add-Type -AssemblyName System.Windows.Forms
-    Add-Type -AssemblyName System.Drawing
+    )    
 
     # Create the form title, size, and starting position
     $form = New-Object System.Windows.Forms.Form
