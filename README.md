@@ -14,5 +14,5 @@ This script holds an example function using what I call a "manual" method of cre
 ## PromptMethod-dotNET.ps1
 This script holds an example function using .NET Framework classes in order to create a prompt. The code is much cleaner and automatically includes logic for displaying help text and matching color schemes.
 
-## Prompt-Method-Graphical.ps1
+## PromptMethod-Graphical.ps1
 This scripts holds an example function using .NET Framework classes to create a graphical prompt. The logic to create the prompt is located in the New-YesNoPrompt function, which is called by the Remove-MyItem function to prompt the user to remove the file or not.
